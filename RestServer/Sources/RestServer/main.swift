@@ -90,14 +90,14 @@ router.post("/ClaimService/add") {
             PersonWow().addClaim(cObj: cObj)
         }
     }
-    response.send("The Person record was successfully inserted (via POST Method).")
+    response.send("The Claim record was successfully inserted (via POST Method).")
     next()}
 
 router.get("/ClaimService/getAll") {
     request, response, next in
     let cList = PersonWow().getAll()
     // JSON Serialization
-    let jsonData : Data = try JSONEncoder().encode(pList)
+    let jsonData : Data = try JSONEncoder().encode(cList)
     //JSONArray
     let jsonStr = String(data: jsonData, encoding: .utf8)
     // set Content-Type
