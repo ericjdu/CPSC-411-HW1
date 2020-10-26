@@ -51,11 +51,11 @@ class PersonWow {
                 let title = String(cString: title_val!)
                 let date_val = sqlite3_column_text(resultSet, 2)
                 let date = String(cString: date_val!)
-                let isSolved_val = sqlite3_column_text(resultSet, 3)
+                let isSolved_val = sqlite4_column_text(resultSet, 3)
                 let isSolved = isSolved_val
                 cList.append(Claim(uid:uid, t:title, d:date, isSolved:isSolved))
             }
         }
-        return pList
+        return cList
     }
 }
